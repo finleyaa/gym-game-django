@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ character.name }}</title>
+</head>
+<body>
+    <h2>{{ user.first_name }} {{ user.last_name }}'s character</h2>
+    {% if character %}
+    <h1>{{ character.name }}</h1>
+    <div>
+        <h3>Stats</h3>
+        {% for stat in character.stats %}
+        <p>stat</p>
+        {% endfor %}
+    </div>
+    {% else %}
+    <form>
+        <label for="name">Name</label>
+        <input name="name">
+        <input type="submit">
+    </form>
+    {% endif %}
+</body>
+</html>

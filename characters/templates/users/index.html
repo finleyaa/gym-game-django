@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Users</title>
+  </head>
+
+  <body>
+    {% if all_users %}
+    <ul>
+      {% for user in all_users %}
+      <li>
+        <a href="{% url 'users:character' user.id %}">
+            {{ user.first_name }} {{ user.last_name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No users are available.</p>
+    {% endif %}
+  </body>
+</html>
